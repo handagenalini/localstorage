@@ -8,7 +8,6 @@
 <label > Phonenumber</label>
 <input type="tel" name="phonenumber" />
 <button>submit</button>
-</form>
 <script>
     function saveToLocalStorage(event){
         event.preventDefault();
@@ -24,6 +23,17 @@
             phonenumber
         }
         localStorage.setItem(obj.email,JSON.stringify(obj));
+        shoeNewUserOnScreen(obj);
+
+    }
+    function showNewUserOnScreen(user){
+        const parentNode=document.getElementById('listOfUser');
+        const childHTML=`<li>${user.name} - ${user.emailid}</li>`
+        parentNode.innerHTML=childHTML
     }
 </script>
+
 </body>
+ 
+ 
+ 
