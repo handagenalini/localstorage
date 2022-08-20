@@ -23,7 +23,7 @@
             emailid,
             phonenumber
         }
-        localStorage.setItem('userdetails',JSON.stringify(obj));
+        localStorage.setItem(obj.email,JSON.stringify(obj));
     }
 </script>
 </body>
