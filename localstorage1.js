@@ -28,12 +28,26 @@
     }
     function showNewUserOnScreen(user){
         const parentNode=document.getElementById('listOfUser');
-        const childHTML=`<li>${user.name} - ${user.emailid}</li>`
-        parentNode.innerHTML=childHTML
+        const childHTML=`<li id=${user.emailid}>${user.name} - ${user.emailid}
+            <button onclick=deleteUser('${user.emailid}')deleteUser</li>`
+        parentNode.innerHTML=parentNode.innerHTML+childHTML
+    }
+    function deleteUser(emailid){
+        console.log(emailid);
+        localStorage.removeItem(emailid);
+        removeUserFromScreen(emailid);
+    }
+    function removeUserFromScreen(emailid){
+        const parentNode=document.getElementById('listOfUser');
+        const childNodeToBeDeleted=document.getElementById(emailid);
+        parentNode.removeChild(childNodeToBeDeleted)
     }
 </script>
 
 </body>
  
+   
+ 
+
  
  
